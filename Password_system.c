@@ -39,7 +39,7 @@ void password()
 {
     heading();
     // Define usernames and passwords
-    struct User users[MAX_USERS] = {{"shajan813", "shajan"}, {"user2", "password2"}, {"user3", "password3"}, {"user4", "password4"}, {"user5", "password5"}};
+    struct User users[MAX_USERS] = {{"shajan813", "shajan"}, {"Turjo742", "TURJO"}, {"user3", "password3"}, {"user4", "password4"}, {"user5", "password5"}};
     // Input your password here mates
     char input_id[MAX_ID_LENGTH];
     char input_password[MAX_PASSWORD_LENGTH];
