@@ -20,7 +20,7 @@ struct student
 {
     int id;
     char stu_name[50];
-    char stu_class[5];
+    char stu_semester[5];
     int roll;
     char book_name[50];
     char date[15];
@@ -30,7 +30,7 @@ FILE *fp;
 
 int main()
 {
-    // heading();
+
     int k = login();
     if (k == 1)
     {
@@ -56,10 +56,10 @@ int login()
     char userpass[11];
     int i;
 
-    printf("Enter your user name : ");
+    printf("Enter your User ID : ");
     scanf("%s", username);
 
-    printf("Enter your user Password : ");
+    printf("Enter your User Password : ");
     for (i = 0; i < 4; i++)
     {
         userpass[i] = getch();
@@ -294,9 +294,9 @@ void issue_book()
     fgets(s.stu_name, sizeof(s.stu_name), stdin);
     s.stu_name[strcspn(s.stu_name, "\n")] = '\0';
 
-    printf("Enter Student Class: ");
-    fgets(s.stu_class, sizeof(s.stu_class), stdin);
-    s.stu_class[strcspn(s.stu_class, "\n")] = '\0';
+    printf("Enter Student Semester: ");
+    fgets(s.stu_semester, sizeof(s.stu_semester), stdin);
+    s.stu_semester[strcspn(s.stu_semester, "\n")] = '\0';
 
     printf("Enter Student Roll: ");
     scanf("%d", &s.roll);
@@ -310,7 +310,7 @@ void view_issue_book_list()
 {
     heading();
     printf("\t\t\t*************** Issued Book List ***************\n\n");
-    printf("\t %-10s \t %-20s \t %-10s \t %-10s \t %-20s \t %s\n\n", "ID", "Name", "Class", "Roll", "Book Name", "Date");
+    printf("\t %-10s \t %-20s \t %-10s \t %-10s \t %-20s \t %s\n\n", "ID", "Name", "Semester", "Roll", "Book Name", "Date");
 
     fp = fopen("issue.txt", "rb");
     if (fp == NULL)
@@ -321,11 +321,11 @@ void view_issue_book_list()
 
     while (fread(&s, sizeof(s), 1, fp) == 1)
     {
-        printf("\t %-10d \t %-20s \t %-10s \t %-10d \t %-20s \t %s\n", s.id, s.stu_name, s.stu_class, s.roll, s.book_name, s.date);
+        printf("\t %-10d \t %-20s \t %-10s \t %-10d \t %-20s \t %s\n", s.id, s.stu_name, s.stu_semester, s.roll, s.book_name, s.date);
     }
 
     fclose(fp);
-}                          
+}                
   
   
   
