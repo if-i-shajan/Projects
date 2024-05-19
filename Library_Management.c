@@ -133,6 +133,7 @@ void menu()
         switch (ch)
         {
         case 0:
+            printf("Thank You!!!");
             exit(0);
         case 1:
             add_book();
@@ -237,7 +238,7 @@ void add_book()
 void view_book_list()
 {
     heading();
-    printf("\t\t\t*************** Available Books ***************\n\n");
+    printf("\n\t\t\t*************** Available Books ***************\n\n");
     printf("\t %-10s \t %-30s \t %-35s \t %s\n\n", "Book ID", "Book Name", "Author", "Date");
 
     fp = fopen("books.txt", "rb");
